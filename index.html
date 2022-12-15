@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Clicker</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="text/javascript" defer src="index.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Christmas Clicker</h1>
+            <!-- Christmas Tree to click on -->
+        <section id="tree">
+        <img src="/images/tree.png" />
+        <p>Presents:</p>
+        <p>presents/second</p>
+            <!-- Brief instructions paragraph -->
+        <p>Click the tree to get presesnts!  Use your presents to buy tree upgrades that automatically generate presents for you.</p>
+        </section>
+        <!-- Producers section on the right:
+        - Ornaments
+        - Garland
+        - Star -->
+        <div id="producers">
+            <h2>Producers</h2>
+            <div class="decoration" id="ornaments">
+                <img src="images/ornaments.jpeg" class="icon" alt="christmas ornaments" />
+                <p>Ornaments</p>
+                <p>Owned:</p>
+                <p>Geneerates (x) presents/second</p>
+                <p>Cost: (x)</p>
+                <button>Buy</button>
+            </div>
+            <div class="decoration" id="garland">
+                <img src="/images/garland.png" class="icon" alt="christmas garland" />
+                <p>Garland</p>
+                <p>Owned:</p>
+                <p>Geneerates (x) presents/second</p>
+                <p>Cost: (x)</p>
+                <button>Buy</button>
+            </div>
+            <div class="decoration" id="candy-canes">
+                <img src="images/candycane.png" class="icon" alt="candy canes" />
+                <p>Candy Canes</p>
+                <p>Owned:</p>
+                <p>Geneerates (x) presents/second</p>
+                <p>Cost: (x)</p>
+                <button>Buy</button>
+            </div>
+            <!-- The star is special.  It can only be bought once, but it doubles present production -->
+            <div class="decoration" id="star">
+                <img src="images/star.jpeg" class="icon" alt="christmas star" />
+                <p>Star</p>
+                <p>Owned: (Y/N)</p>
+                <p>Double Present Production</p>
+                <p>THe star can only be bought once.</p>
+                <p>Cost: (x)</p>
+                <button>Buy</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

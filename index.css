@@ -1,0 +1,27 @@
+
+img {
+    height: 400px;
+    width: 400px;
+}
+#producers {
+    background: #d63447; 
+    padding: 10px;
+    display: flex;
+
+}
+
+.decoration {
+
+}
+
+.icon {
+    height: 100px;
+    width: 100px;
+}
+
+main {
+    background: #085f63; 
+    color: white;
+    padding: 10px;
+    display: flex;
+}
