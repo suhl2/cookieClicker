@@ -27,12 +27,20 @@ tree.addEventListener("click", addPresentOnClick);
 //start with ornament
 const ornamentsButton = document.getElementById("ornaments");
 const ornamentsOwnedText = document.getElementById("ornaments-owned");
+const ornamentsCostText = document.getElementById("ornaments-cost");
+const ornamentsGenerateText = document.getElementById("ornaments-generate");
 console.log(ornamentsOwnedText);
 let ornamentsOwned = 0;
 const buyOrnaments = () => {
+    if (presents >= producers[0]["cost"]){
+    presents -= producers[0]["cost"];
+    producers[0]["cost"] += producers[0]["presentIncrease"];
     ornamentsOwned++;
     presentsPerSecond += 1;
     ornamentsOwnedText.innerText = `Owned: ${ornamentsOwned}`;
+    ornamentsCostText.innerText = `Cost: ${producers[0]["cost"]} presents`;
+    presentText.innerText = `Presents: ${presents}`;
+    }
 }
 ornamentsButton.addEventListener("click", buyOrnaments);
 
@@ -41,6 +49,7 @@ const presentsPerSecondText = document.getElementById("presents-per-second");
 const perSecond = () => {
     presents += presentsPerSecond;
     console.log(presents);
-    presentsPerSecondText.innerText = `${presents} presents/second`;   
+    presentsPerSecondText.innerText = `${presentsPerSecond} presents/second`; 
+    presentText.innerText = `Presents: ${presents}`;  
 }
 setInterval(perSecond, 1000);
