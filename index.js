@@ -37,3 +37,10 @@ const buyOrnaments = () => {
 ornamentsButton.addEventListener("click", buyOrnaments);
 
 //increment presents once per second
+const presentsPerSecondText = document.getElementById("presents-per-second");
+const perSecond = () => {
+    presents += presentsPerSecond;
+    console.log(presents);
+    presentsPerSecondText.innerText = `${presents} presents/second`;   
+}
+setInterval(perSecond, 1000);
