@@ -5,7 +5,6 @@ img {
     width: 400px;
 }
 #producers {
-    background: #d63447; 
     padding: 10px;
     display: flex;
     flex-flow: column;
@@ -19,6 +18,7 @@ img {
     box-shadow: 5px 5px 10px #085f63;
     padding: 10px;
     margin-bottom: 20px;
+    background: #d63447; 
 }
 
 .icon {
