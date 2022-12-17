@@ -12,7 +12,9 @@ let producers = [
     {kind: "candy-cane", cost: 100, increment: 50, presentIncrease: 10},
     {kind: "star", cost: 5000}
 ]
-
+//Get producer divs
+const garlandDiv = document.getElementById("garland-div");
+const candyCaneDiv = document.getElementById("candy-cane-div");
 
 //Clicking on tree generates one present
 const tree = document.getElementById("tree");
@@ -29,20 +31,39 @@ const ornamentsButton = document.getElementById("ornaments");
 const ornamentsOwnedText = document.getElementById("ornaments-owned");
 const ornamentsCostText = document.getElementById("ornaments-cost");
 const ornamentsGenerateText = document.getElementById("ornaments-generate");
-console.log(ornamentsOwnedText);
 let ornamentsOwned = 0;
 const buyOrnaments = () => {
     if (presents >= producers[0]["cost"]){
-    presents -= producers[0]["cost"];
-    producers[0]["cost"] += producers[0]["presentIncrease"];
-    ornamentsOwned++;
-    presentsPerSecond += 1;
-    ornamentsOwnedText.innerText = `Owned: ${ornamentsOwned}`;
-    ornamentsCostText.innerText = `Cost: ${producers[0]["cost"]} presents`;
-    presentText.innerText = `Presents: ${presents}`;
+        presents -= producers[0]["cost"];
+        producers[0]["cost"] += producers[0]["presentIncrease"];
+        ornamentsOwned++;
+        presentsPerSecond += 1;
+        ornamentsOwnedText.innerText = `Owned: ${ornamentsOwned}`;
+        ornamentsCostText.innerText = `Cost: ${producers[0]["cost"]} presents`;
+        presentText.innerText = `Presents: ${presents}`;
     }
 }
 ornamentsButton.addEventListener("click", buyOrnaments);
+
+//garland producer
+
+const garlandButton = document.getElementById("garland");
+const garlandOwnedText = document.getElementById("garland-owned");
+const garlandCostText = document.getElementById("garland-cost");
+const garlandGenerateText = document.getElementById("garland-generate");
+let garlandOwned = 0;
+const buyGarland = () => {
+    if (presents >= producers[1]["cost"]) {
+        presents -= producers[1]["cost"];
+        producers[1]["cost"] += producers[1]["presentIncrease"];
+        garlandOwned++
+        presentsPerSecond += 5;
+        garlandOwnedText.innerText = `Owned: ${garlandOwned}`;
+        garlandCostText.innerText = `Cost: ${producers[1]["cost"]} presents`;
+        presentText.innerText = `Presents: ${presents}`;
+    }
+}
+garlandButton.addEventListener("click", buyGarland);
 
 //increment presents once per second
 const presentsPerSecondText = document.getElementById("presents-per-second");
@@ -51,5 +72,11 @@ const perSecond = () => {
     console.log(presents);
     presentsPerSecondText.innerText = `${presentsPerSecond} presents/second`; 
     presentText.innerText = `Presents: ${presents}`;  
+    if (presents > 30) {
+        garlandDiv.style.display = "block";
+    }
+    if (presents > 80) {
+        candyCaneDiv.style.display = "block";
+    }
 }
 setInterval(perSecond, 1000);
