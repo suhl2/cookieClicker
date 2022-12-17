@@ -65,6 +65,26 @@ const buyGarland = () => {
 }
 garlandButton.addEventListener("click", buyGarland);
 
+//candy cane producer
+const candyCaneButton = document.getElementById("candy-canes");
+const candyCanesOwnedText = document.getElementById("candy-canes-owned");
+const candyCanesCostText = document.getElementById("candy-canes-cost");
+const candyCanesGenerateText = document.getElementById("candy-canes-generate");
+let candyCanesOwned = 0;
+const buyCandyCanes = () => {
+    if (presents >= producers[2]["cost"]) {
+        presents -= producers[2]["cost"];
+        producers[2]["cost"] += producers[2]["presentIncrease"];
+        candyCanesOwned++;
+        presentsPerSecond += 10;
+        candyCanesOwnedText.innerText = `Owned: ${candyCanesOwned}`;
+        candyCanesCostText.innerText = `Cost: ${producers[2]["cost"]} presents`;
+        presentText.innerText = `Presents: ${presents}`;
+    }
+} 
+
+candyCaneButton.addEventListener("click", buyCandyCanes);
+
 //increment presents once per second
 const presentsPerSecondText = document.getElementById("presents-per-second");
 const perSecond = () => {
